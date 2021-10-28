@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DDD.WinForm
 {
-    public partial class Form1 : Form
+    public partial class WeatherLatestView : Form
     {
-        public Form1()
+        public WeatherLatestView()
         {
             InitializeComponent();
+        }
+
+        private void LatestButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
