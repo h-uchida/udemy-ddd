@@ -40,9 +40,16 @@ namespace DDD.WinForm
             {
                 DataDateLabel.Text = dt.Rows[0]["DataDate"].ToString();
                 ConditionLabel.Text = dt.Rows[0]["Condition"].ToString();
-                TemperatureLabel.Text = Math.Round(Convert.ToSingle(dt.Rows[0]["Temperature"]), 2) + "℃";
+                TemperatureLabel.Text = RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"]), 2) + "℃";
             }
 
+        }
+
+
+        private string RoundString(float value, int decimalPoint)
+        {
+            var temp = Convert.ToSingle(Math.Round(value, decimalPoint));
+            return temp.ToString("F" + decimalPoint);
         }
     }
 }
