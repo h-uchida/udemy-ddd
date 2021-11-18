@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.WinForm", "DDD.WinForm\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDTest.Tests", "DDDTest.Tests\DDDTest.Tests.csproj", "{2DC47CA4-AC17-40A9-AFF8-3F29BD643226}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.Infrastructure", "DDD.Infrastructure\DDD.Infrastructure.csproj", "{2DDF4B3E-CC5F-44A3-9A67-69F5A2A4625C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.Domain", "DDD.Domain\DDD.Domain.csproj", "{E7035735-90A3-44FA-8DB6-813AAC75D5F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{2DC47CA4-AC17-40A9-AFF8-3F29BD643226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DC47CA4-AC17-40A9-AFF8-3F29BD643226}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DC47CA4-AC17-40A9-AFF8-3F29BD643226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDF4B3E-CC5F-44A3-9A67-69F5A2A4625C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDF4B3E-CC5F-44A3-9A67-69F5A2A4625C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDF4B3E-CC5F-44A3-9A67-69F5A2A4625C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDF4B3E-CC5F-44A3-9A67-69F5A2A4625C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7035735-90A3-44FA-8DB6-813AAC75D5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7035735-90A3-44FA-8DB6-813AAC75D5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7035735-90A3-44FA-8DB6-813AAC75D5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7035735-90A3-44FA-8DB6-813AAC75D5F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
