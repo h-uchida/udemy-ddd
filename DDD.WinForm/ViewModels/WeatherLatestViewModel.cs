@@ -20,14 +20,14 @@ namespace DDD.WinForm.ViewModels
 
         public void Search()
         {
-            var dt = _weather.GetLatest(int.Parse(AreaIdText));
+            var entity = _weather.GetLatest(int.Parse(AreaIdText));
 
-            if (dt.Rows.Count > 0)
+            if (entity != null)
             {
-                DataDateText = dt.Rows[0]["DataDate"].ToString();
-                ConditionText = dt.Rows[0]["Condition"].ToString();
+                DataDateText = entity.DataDate.ToString();
+                ConditionText = entity.Condition.ToString();
                 TemperatureText = CommonFunc.RoundString(
-                    Convert.ToSingle(dt.Rows[0]["Temperature"]),
+                    entity.Temperature,
                     CommonConst.TemperatureDecimalPoint) + " " + CommonConst.TemperatureUnitName;
             }
         }
