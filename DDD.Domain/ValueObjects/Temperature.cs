@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DDD.Domain.ValueObjects
 {
-    public sealed class Temperature : IEquatable<Temperature>
+    public sealed class Temperature : ValueObject<Temperature>
     {
         public const string UnitName = "℃";
         public const int DecimalPoint = 2;
@@ -24,30 +24,9 @@ namespace DDD.Domain.ValueObjects
             }
         }
 
-        public override bool Equals(object obj)
+        protected override bool EqualsCore(Temperature other)
         {
-            return Equals(obj as Temperature);
-        }
-
-        public bool Equals(Temperature other)
-        {
-            return other != null &&
-                   Value == other.Value;
-        }
-
-        public override int GetHashCode()
-        {
-            return -1937169414 + Value.GetHashCode();
-        }
-
-        public static bool operator ==(Temperature left, Temperature right)
-        {
-            return EqualityComparer<Temperature>.Default.Equals(left, right);
-        }
-
-        public static bool operator !=(Temperature left, Temperature right)
-        {
-            return !(left == right);
+            return Value == other.Value;
         }
     }
 }
