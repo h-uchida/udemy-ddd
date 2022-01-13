@@ -11,7 +11,8 @@ namespace DDDTest.Tests
         {
             var t = new Temperature(12.3f);
             Assert.AreEqual(12.3f, t.Value);
-            Assert.AreEqual("12.30℃", t.DisplayValue);
+            Assert.AreEqual("12.30", t.DisplayValue);
+            Assert.AreEqual("12.30 ℃", t.DisplayValueWithUnitSpace);
         }
 
         [TestMethod]

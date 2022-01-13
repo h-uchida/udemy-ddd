@@ -15,14 +15,8 @@ namespace DDD.Domain.ValueObjects
         }
 
         public float Value { get; }
-        public string DisplayValue
-        {
-            get
-            {
-                return CommonFunc.RoundString(Value, DecimalPoint)
-                    + UnitName;
-            }
-        }
+        public string DisplayValue => CommonFunc.RoundString(Value, DecimalPoint);
+        public string DisplayValueWithUnitSpace => $"{DisplayValue} ℃";
 
         protected override bool EqualsCore(Temperature other)
         {
