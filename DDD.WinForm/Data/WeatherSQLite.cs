@@ -1,4 +1,4 @@
-﻿using DDD.WinForm.Common;
+﻿using DDD.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data;

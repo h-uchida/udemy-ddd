@@ -1,7 +1,4 @@
 ﻿using DDD.Domain.Repositories;
-using DDD.Domain.ValueObjects;
-using DDD.WinForm.Common;
-using System;
 
 namespace DDD.WinForm.ViewModels
 {
