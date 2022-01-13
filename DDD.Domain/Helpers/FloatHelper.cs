@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace DDD.WinForm.Common
+namespace DDD.Domain.Helpers
 {
-    class CommonFunc
+    public static class FloatHelper
     {
         public static string RoundString(float value, int decimalPoint)
         {

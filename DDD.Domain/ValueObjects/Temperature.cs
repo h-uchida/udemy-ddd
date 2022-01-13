@@ -1,6 +1,4 @@
-﻿using DDD.WinForm.Common;
-using System;
-using System.Collections.Generic;
+﻿using DDD.Domain.Helpers;
 
 namespace DDD.Domain.ValueObjects
 {
@@ -15,7 +13,7 @@ namespace DDD.Domain.ValueObjects
         }
 
         public float Value { get; }
-        public string DisplayValue => CommonFunc.RoundString(Value, DecimalPoint);
+        public string DisplayValue => FloatHelper.RoundString(Value, DecimalPoint);
         public string DisplayValueWithUnitSpace => $"{DisplayValue} ℃";
 
         protected override bool EqualsCore(Temperature other)
