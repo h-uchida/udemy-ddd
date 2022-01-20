@@ -20,7 +20,7 @@ namespace DDD.Domain.Entities
 
         public bool IsMousho()
         {
-            if (Condition.Value == 1)
+            if (Condition == Condition.Sunny)
             {
                 if (Temperature.Value > 30)
                 {

@@ -2,6 +2,11 @@
 {
     public sealed class Condition : ValueObject<Condition>
     {
+        public static readonly Condition None = new Condition(0);
+        public static readonly Condition Sunny = new Condition(1);
+        public static readonly Condition Cloudy = new Condition(2);
+        public static readonly Condition Rain = new Condition(3);
+
         public Condition(int value)
         {
             Value = value;
@@ -13,9 +18,9 @@
         {
             get
             {
-                if (Value == 1) return "晴れ";
-                if (Value == 2) return "曇り";
-                if (Value == 3) return "雨";
+                if (this == Sunny) return "晴れ";
+                if (this == Cloudy) return "曇り";
+                if (this == Rain) return "雨";
                 return "不明";
             }
         }
