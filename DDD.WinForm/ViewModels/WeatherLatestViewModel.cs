@@ -1,10 +1,15 @@
 ﻿using DDD.Domain.Repositories;
+using DDD.Infrastructure.SQLite;
 
 namespace DDD.WinForm.ViewModels
 {
     public class WeatherLatestViewModel
     {
         private IWeatherRepository _weather;
+
+        public WeatherLatestViewModel() : this(new WeatherSQLite())
+        {
+        }
 
         public WeatherLatestViewModel(IWeatherRepository weather)
         {

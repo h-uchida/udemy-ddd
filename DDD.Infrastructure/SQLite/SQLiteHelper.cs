@@ -1,6 +1,6 @@
-﻿namespace DDD.Domain
+﻿namespace DDD.Infrastructure.SQLite
 {
-    public static class CommonConst
+    internal static class SQLiteHelper
     {
         public const string ConnectionString = @"Data Source=ddd.sqlite3;Version=3;";
     }
