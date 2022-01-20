@@ -13,7 +13,7 @@ namespace DDD.Domain.ValueObjects
         }
 
         public float Value { get; }
-        public string DisplayValue => FloatHelper.RoundString(Value, DecimalPoint);
+        public string DisplayValue => Value.RoundString(DecimalPoint);
         public string DisplayValueWithUnitSpace => $"{DisplayValue} ℃";
 
         protected override bool EqualsCore(Temperature other)

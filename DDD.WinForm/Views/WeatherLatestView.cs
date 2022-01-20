@@ -23,7 +23,7 @@ namespace DDD.WinForm
             {
                 DataDateLabel.Text = dt.Rows[0]["DataDate"].ToString();
                 ConditionLabel.Text = dt.Rows[0]["Condition"].ToString();
-                TemperatureLabel.Text = FloatHelper.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"]), Temperature.DecimalPoint) + Temperature.UnitName;
+                TemperatureLabel.Text = Convert.ToSingle(dt.Rows[0]["Temperature"]).RoundString(Temperature.DecimalPoint) + Temperature.UnitName;
             }
 
         }
