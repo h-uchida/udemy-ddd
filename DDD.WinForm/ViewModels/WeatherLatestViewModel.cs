@@ -23,7 +23,7 @@ namespace DDD.WinForm.ViewModels
             if (entity != null)
             {
                 DataDateText = entity.DataDate.ToString();
-                ConditionText = entity.Condition.ToString();
+                ConditionText = entity.Condition.DisplayValue;
                 TemperatureText = entity.Temperature.DisplayValueWithUnitSpace;
             }
         }
