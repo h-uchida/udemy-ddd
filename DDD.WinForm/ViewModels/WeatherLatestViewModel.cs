@@ -1,10 +1,9 @@
 ﻿using DDD.Domain.Repositories;
 using DDD.Infrastructure.SQLite;
-using System.ComponentModel;
 
 namespace DDD.WinForm.ViewModels
 {
-    public class WeatherLatestViewModel : INotifyPropertyChanged
+    public class WeatherLatestViewModel : ViewModelBase
     {
         private IWeatherRepository _weather;
 
@@ -20,48 +19,26 @@ namespace DDD.WinForm.ViewModels
         public string AreaIdText
         {
             get { return _areaIdText; }
-            set
-            {
-                if (_areaIdText == value) return;
-                _areaIdText = value;
-                OnPropertyChanged(nameof(AreaIdText));
-            }
+            set { SetProperty(ref _areaIdText, value); }
         }
         private string _dataDateText = string.Empty;
         public string DataDateText
         {
             get { return _dataDateText; }
-            set
-            {
-                if (_dataDateText == value) return;
-                _dataDateText = value;
-                OnPropertyChanged(nameof(DataDateText));
-            }
+            set { SetProperty(ref _dataDateText, value); }
         }
         private string _conditionText = string.Empty;
         public string ConditionText
         {
             get { return _conditionText; }
-            set
-            {
-                if (_conditionText == value) return;
-                _conditionText = value;
-                OnPropertyChanged(nameof(ConditionText));
-            }
+            set { SetProperty(ref _conditionText, value); }
         }
         private string _temperatureText = string.Empty;
         public string TemperatureText
         {
             get { return _temperatureText; }
-            set
-            {
-                if (_temperatureText == value) return;
-                _temperatureText = value;
-                OnPropertyChanged(nameof(TemperatureText));
-            }
+            set { SetProperty(ref _temperatureText, value); }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public void Search()
         {
@@ -73,11 +50,6 @@ namespace DDD.WinForm.ViewModels
                 ConditionText = entity.Condition.DisplayValue;
                 TemperatureText = entity.Temperature.DisplayValueWithUnitSpace;
             }
-        }
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
