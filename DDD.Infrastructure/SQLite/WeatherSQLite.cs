@@ -10,7 +10,7 @@ namespace DDD.Infrastructure.SQLite
     {
         public WeatherEntity GetLatest(int areaId)
         {
-            var sql = @"select DataDate, Condition, Temperature from Weather where AreaId = @AreaId order by DataDate desc LIMIT 1";
+            var sql = @"select AreaId, DataDate, Condition, Temperature from Weather where AreaId = @AreaId order by DataDate desc LIMIT 1";
 
             using (var connection = new SQLiteConnection(SQLiteHelper.ConnectionString))
             using (var command = new SQLiteCommand(sql, connection))

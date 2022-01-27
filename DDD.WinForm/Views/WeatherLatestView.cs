@@ -15,19 +15,16 @@ namespace DDD.WinForm
         public WeatherLatestView()
         {
             InitializeComponent();
+
+            AreaIdTextBox.DataBindings.Add(nameof(AreaIdTextBox.Text), _viewModel, nameof(_viewModel.AreaIdText));
+            DataDateLabel.DataBindings.Add(nameof(DataDateLabel.Text), _viewModel, nameof(_viewModel.DataDateText));
+            ConditionLabel.DataBindings.Add(nameof(ConditionLabel.Text), _viewModel, nameof(_viewModel.ConditionText));
+            TemperatureLabel.DataBindings.Add(nameof(TemperatureLabel.Text), _viewModel, nameof(_viewModel.TemperatureText));
         }
 
         private void LatestButton_Click(object sender, EventArgs e)
         {
-            //var dt = WeatherSQLite.GetLatest(int.Parse(AreaIdTextBox.Text));
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    DataDateLabel.Text = dt.Rows[0]["DataDate"].ToString();
-            //    ConditionLabel.Text = dt.Rows[0]["Condition"].ToString();
-            //    TemperatureLabel.Text = Convert.ToSingle(dt.Rows[0]["Temperature"]).RoundString(Temperature.DecimalPoint) + Temperature.UnitName;
-            //}
-
+            _viewModel.Search();
         }
 
 
