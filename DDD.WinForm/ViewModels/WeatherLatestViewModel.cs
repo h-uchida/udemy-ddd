@@ -1,6 +1,7 @@
 ﻿using DDD.Domain.Entities;
 using DDD.Domain.Repositories;
 using DDD.Infrastructure.SQLite;
+using System;
 using System.ComponentModel;
 
 namespace DDD.WinForm.ViewModels
@@ -24,11 +25,11 @@ namespace DDD.WinForm.ViewModels
                 Areas.Add(area);
             }
         }
-        private string _areaIdText = string.Empty;
-        public string AreaIdText
+        private object _selectedAreaId;
+        public object SelectedAreaId
         {
-            get { return _areaIdText; }
-            set { SetProperty(ref _areaIdText, value); }
+            get { return _selectedAreaId; }
+            set { SetProperty(ref _selectedAreaId, value); }
         }
         private string _dataDateText = string.Empty;
         public string DataDateText
@@ -53,7 +54,7 @@ namespace DDD.WinForm.ViewModels
 
         public void Search()
         {
-            var entity = _weather.GetLatest(int.Parse(AreaIdText));
+            var entity = _weather.GetLatest(Convert.ToInt32(_selectedAreaId));
 
             if (entity != null)
             {
