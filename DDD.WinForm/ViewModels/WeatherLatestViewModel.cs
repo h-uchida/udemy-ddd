@@ -11,7 +11,7 @@ namespace DDD.WinForm.ViewModels
         private IWeatherRepository _weather;
         private IAreasRepository _areas;
 
-        public WeatherLatestViewModel() : this(new WeatherSQLite(), null)
+        public WeatherLatestViewModel() : this(new WeatherSQLite(), new AreasSQLite())
         {
         }
 
