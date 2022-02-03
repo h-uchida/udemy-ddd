@@ -56,12 +56,9 @@ namespace DDD.WinForm.ViewModels
         {
             var entity = _weather.GetLatest(Convert.ToInt32(_selectedAreaId));
 
-            if (entity != null)
-            {
-                DataDateText = entity.DataDate.ToString();
-                ConditionText = entity.Condition.DisplayValue;
-                TemperatureText = entity.Temperature.DisplayValueWithUnitSpace;
-            }
+            DataDateText = entity?.DataDate.ToString() ?? "";
+            ConditionText = entity?.Condition.DisplayValue ?? "";
+            TemperatureText = entity?.Temperature.DisplayValueWithUnitSpace ?? "";
         }
     }
 }
